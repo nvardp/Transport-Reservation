@@ -23,13 +23,14 @@ bool execute_add(transport_manager& manager)
 		std::cout << ERRORS::not_integer();
 		return false;
 	}
-	manager.add_bus(Bus(bus_number,
-		IOUtils::read_string("Driver name\t"),
-		IOUtils::read_string("Departure time\t"),
-		IOUtils::read_string("Arrival time\t"),
-		IOUtils::read_string("Starting point\t"),
-		IOUtils::read_string("Destination\t")
-	));
+	std::string tmp_name = IOUtils::read_string("Driver name\t");
+	std::string tmp_Departure = IOUtils::read_string("Departure time\t");
+	std::string tmp_Arrival = IOUtils::read_string("Arrival time\t");
+	std::string tmp_Starting = IOUtils::read_string("Starting point\t");
+	std::string tmp_Destination = IOUtils::read_string("Destination\t");
+
+	manager.add_bus(Bus(bus_number, tmp_name, tmp_Departure, tmp_Arrival, tmp_Starting, tmp_Destination));
+	
 	std::cout << SUCCESS;
 	return true;
 }
