@@ -1,10 +1,13 @@
 #include "bus.h"
 
-Bus::Bus(int number, const std::string& driver_name, const std::string& departure_time,
-	const std::string& arrival_time, const std::string& starting_point, const std::string& destination) :
-	number(number), seats{}, driver_name{ driver_name },
-	departure_time{ departure_time }, arrival_time{ arrival_time },
-	starting_point{ starting_point }, destination{ destination }
+Bus::Bus(int number, std::string driver_name, std::string departure_time,
+	 std::string arrival_time,  std::string starting_point, std::string destination) :
+	number(number), seats{}, 
+	driver_name{ std::move(driver_name) },
+	departure_time{ std::move(departure_time) }, 
+	arrival_time{ std::move(arrival_time) },
+	starting_point{ std::move(starting_point) },
+	destination{ std::move(destination) }
 {};
 
 std::bitset<MAX_SEATS> Bus::get_seats() const
