@@ -12,7 +12,8 @@ const std::string SUCCESS = "Done!\n";
 
 class Bus {
 public:
-	Bus(int, const std::string&, const std::string&, const std::string&, const std::string&, const std::string&);
+	Bus(int number, std::string driver_name, std::string departure_time,
+	 std::string arrival_time,  std::string starting_point, std::string destination);
 
 public:
 	unsigned get_number() const;
